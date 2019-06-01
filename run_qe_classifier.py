@@ -352,6 +352,8 @@ class ClueWebProcessor(DataProcessor):
                 json_dict = json.loads('#'.join(items[1:]))
                 body_words = json_dict["doc"]["body"].split(' ')
                 truncated_body = ' '.join(body_words[0: min(200, len(body_words))])
+
+                # we use the concatentation of title and document first 200 tokens
                 d = tokenization.convert_to_unicode(json_dict["doc"].get("title", "") + truncated_body)
 
                 r = int(r)
@@ -585,6 +587,8 @@ class ClueWebPassageProcessor(DataProcessor):
 
                 qid, _, docid, r, _, _ = trec_line.strip().split(' ')
 
+                # here a document is already a passage
+
                 # to train, we do not use all passages because it leads to overfitting
                 # we subsample the following:
                 #    first passage in a doc
@@ -599,6 +603,8 @@ class ClueWebPassageProcessor(DataProcessor):
                 json_dict = json.loads('#'.join(items[1:]))
                 body_words = json_dict["doc"]["body"].split(' ')
                 truncated_body = ' '.join(body_words[0: min(200, len(body_words))])
+
+                # we use the concatentation of title and passage
                 d = tokenization.convert_to_unicode(json_dict["doc"].get("title", "") + " " + truncated_body)
 
                 r = int(r)
