@@ -55,9 +55,9 @@ def json_to_trec(dataset_file_path,
                     max_score = scores[max_score_idx]
                     max_passage = passages[max_score_idx]
                     my_ranking.append((max_score, docid, max_passage))
-                elif aggregation == "avgp":
-                    avg_score = np.mean(scores)
-                    my_ranking.append(avg_score, docid, "mean")
+                elif aggregation == "sump":
+                    avg_score = np.sum(scores)
+                    my_ranking.append(avg_score, docid, "sump")
                 else:
                     raise NotImplementedError
 
@@ -79,7 +79,7 @@ if __name__ == '__main__':
     parser.add_argument("--dataset_file_format", "-d", type=str, choices=["trec"], default="trec")
     parser.add_argument('--run_name', '-n', default="", help='run name')
     parser.add_argument('--max_rerank_depth', '-M', type=int, default=1000)
-    parser.add_argument("--aggregation", choices=["maxp", "avgp"])
+    parser.add_argument("--aggregation", choices=["maxp", "sump"])
     args = parser.parse_args()
 
     json_to_trec(args.dataset_file,
