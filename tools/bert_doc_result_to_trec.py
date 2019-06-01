@@ -2,12 +2,12 @@ import argparse
 import json
 
 
-def json_to_trec(dataset_file_path: str,
-                 prediction_file_path: str,
-                 output_file_path: str,
-                 run_name: str="",
-                 dataset_format: str = "trec",
-                 max_depth: int = 1000) -> None:
+def json_to_trec(dataset_file_path,
+                 prediction_file_path,
+                 output_file_path,
+                 run_name="",
+                 dataset_format="trec",
+                 max_depth=1000):
     """
 
     :param dataset_file_path: json file
@@ -25,15 +25,10 @@ def json_to_trec(dataset_file_path: str,
                 qid, _, docid, rank, score, _ = trec_str.strip().split()
                 if int(rank) > max_depth:
                     continue
-                d = {"qid":qid, "docid": docid}
-                dataset.append(d)
-            elif dataset_format == "marco":
-                qid, docid, _, _ = line.strip().split('\t')
                 d = {"qid": qid, "docid": docid}
                 dataset.append(d)
             else:
-                d = json.loads(line)
-                dataset.append(d)
+                raise NotImplementedError
 
     predictions = []
     with open(prediction_file_path) as prediction_file:
@@ -69,9 +64,9 @@ if __name__ == '__main__':
     parser.add_argument('dataset_file', help='Dataset json file')
     parser.add_argument('prediction_file', help='Prediction json File')
     parser.add_argument('output_file', help='Output File')
-    parser.add_argument("--dataset_file_format", "-d", type=str, choices=["trec", "json", "marco"], default="json")
+    parser.add_argument("--dataset_file_format", "-d", type=str, choices=["trec"], default="trec")
     parser.add_argument('--run_name', '-n', default="", help='run name')
-    parser.add_argument('--max_rerank_depth', '-M', type=int, default=1000)
+    parser.add_argument('--max_rerank_depth', '-M', type=int, default=100)
     args = parser.parse_args()
 
     json_to_trec(args.dataset_file,
