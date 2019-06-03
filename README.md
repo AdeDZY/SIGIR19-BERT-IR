@@ -15,6 +15,7 @@ Abstract: Neural networks provide new possibilities to automatically learn compl
 Data can be downloaded from our [Virtual Appendix](http://boston.lti.cs.cmu.edu/appendices/SIGIR2019-Zhuyun-Dai/).
 
 The input to the BERT re-ranker is a list of .trec.with_json files. Each line is in the form of: 
+
 `qid Q0 docid ranke score runname # {"doc":{"title":"...", "body":"......"}}`. 
 
 E.g. A document:
@@ -28,10 +29,13 @@ A passage:
 
 
 We release these .trec.with_json files for ClueWeb09-B. We cannot release the document contents of Robust04 documents. 
-As an alternative, we provide the inital rankings for ClueWeb09/Robust04 (.trec files). Each line is the format of
+As an alternative, we provide the inital rankings for ClueWeb09/Robust04 (.trec files). Each line is the format of:
+
 `qid Q0 docid rank score runname`
+
 You need to get the text contents of candidate documents and append them to the trec file in json format
 (`{doc":{"title":"...", "body":"......"}}`).  
+
 Once you have generated the .trec.with_json files for documents, you can use the provided passage generation script to generate passages
 
 ## Google Colab notebooks to train BERT
