@@ -12,7 +12,6 @@ Abstract: Neural networks provide new possibilities to automatically learn compl
 
 
 ## Data
----
 Data can be downloaded from our [Virtual Appendix](http://boston.lti.cs.cmu.edu/appendices/SIGIR2019-Zhuyun-Dai/).
 
 The input to the BERT re-ranker is a list of .trec.with_json files. Each line is in the form of: 
@@ -36,7 +35,6 @@ You need to get the text contents of candidate documents and append them to the 
 Once you have generated the .trec.with_json files for documents, you can use the provided passage generation script to generate passages
 
 ## Google Colab notebooks to train BERT
----
 You can upload the .trec.with_json files to Google cloud bucket, and directly run the notebooks:
 1. [ClueWeb09-B Document Level Train/Inference (BERT-FirstP)](https://colab.research.google.com/drive/1qFGmEz5SZrsGui5HHAmiS_geppJQy8b4)
 2. [ClueWeb09-B Passage Level Train/Inference (BERT-MaxP, BERT-SumP)](https://colab.research.google.com/drive/1YAj_yA7R8Sv9QaJkKfjC0sA0vpeEh3dC)
@@ -45,7 +43,6 @@ You can upload the .trec.with_json files to Google cloud bucket, and directly ru
 The output is a file of scores for each document/passage. It need to be aligned with the document/passage ids in the original .trec.with_json file. We provide scripts for this purpose.
 
 ## Pre-trained Bing-augmented BERT Model
----
 Some search tasks require both general text understanding (e.g. Honda is a motor company) and more-specific search knowledge (e.g. people want to see special offers about Honda). While pre-trained BERT encodes general language patterns, the search knowledge must be learned from labeled search data.  We follow the domain adaptation setting from our WSDM2018 [Conv-KNRM](http://www.cs.cmu.edu/~zhuyund/papers/WSDM_2018_Dai.pdf) work and augmented BERT with search knowledge from a sample of Bing search log. 
 
 The Bing-augmented BERT model can be downloaded from our [Virtual Appendix](http://boston.lti.cs.cmu.edu/appendices/SIGIR2019-Zhuyun-Dai/)
