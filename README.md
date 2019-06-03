@@ -1,4 +1,4 @@
-# SIGIR19-BERT-IR
+# SIGIR19-BERT-IR: Deeper Text Understanding for IR with Contextual NeuralLanguage Modeling
 Repo of code and data for SIGIR-19 short paper "Deeper Text Understanding for IR with Contextual NeuralLanguage Modeling"
 
 [Find the paper on arXiv](https://arxiv.org/abs/1905.09217v1)
