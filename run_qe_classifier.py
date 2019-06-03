@@ -336,7 +336,7 @@ class ClueWebProcessor(DataProcessor):
 
         query_file = open(os.path.join(data_dir, "queries.json"))
         qid2queries = self._read_queries(query_file)
-        tf.logging.info("Loaded {} queries. Example: {}".format(len(qid2queries), qid2queries.values()[0]))
+        tf.logging.info("Loaded {} queries. Example: {}".format(len(qid2queries), list(qid2queries.values())[0]))
 
         for file_name in train_files:
             train_file = open(os.path.join(data_dir, file_name))
@@ -379,7 +379,7 @@ class ClueWebProcessor(DataProcessor):
 
         query_file = open(os.path.join(data_dir, "queries.json"))
         qid2queries = self._read_queries(query_file)
-        tf.logging.info("Loaded {} queries. Example: {}".format(len(qid2queries), qid2queries.values()[0]))
+        tf.logging.info("Loaded {} queries. Example: {}".format(len(qid2queries), list(qid2queries.values())[0]))
 
         for i, line in enumerate(dev_file):
             items = line.strip().split('#')
