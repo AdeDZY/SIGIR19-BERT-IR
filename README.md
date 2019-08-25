@@ -40,7 +40,7 @@ Once you have generated the .trec.with_json files for documents, you can use the
 You can upload the .trec.with_json files to Google cloud bucket, and directly run the notebooks:
 1. [ClueWeb09-B Document Level Train/Inference (BERT-FirstP)](https://colab.research.google.com/drive/1qFGmEz5SZrsGui5HHAmiS_geppJQy8b4)
 2. [ClueWeb09-B Passage Level Train/Inference (BERT-MaxP, BERT-SumP)](https://colab.research.google.com/drive/1YAj_yA7R8Sv9QaJkKfjC0sA0vpeEh3dC)
-3. Robust04 notebooks Comming Soon.
+3. [Robust04 Passage Level Train/Inference (BERT-maxP, BERT-SumP)](https://colab.research.google.com/drive/1lgfAVtTsGf-YHPPSfsr8BN4W8QaqvzV_)
 
 The output is a file of scores for each document/passage. It need to be aligned with the document/passage ids in the original .trec.with_json file. We provide scripts for this purpose.
 
