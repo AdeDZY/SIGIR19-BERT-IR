@@ -25,8 +25,7 @@ A passage:
 80 Q0 clueweb09-en0008-49-09144_passage-0 1 -5.66498569 passage # {"doc": {"title": "Personal Keyboards reviews - Keyboard-Reviews.com", "body": "personal keyboards reviews...}}
 ```
 
-
-We release these .trec.with_json files for ClueWeb09-B. We cannot release the document contents of Robust04 documents. 
+We release these .trec.with_json files for ClueWeb09-B. We cannot release the document contents of Robust04 documents, but here is a [small sample of Robust04 .trec.with_json file](http://boston.lti.cs.cmu.edu/appendices/SIGIR2019-Zhuyun-Dai/robust_sample.trec.with_json). 
 As an alternative, we provide the inital rankings for ClueWeb09/Robust04 (.trec files). Each line is the format of:
 
 `qid Q0 docid rank score runname`
